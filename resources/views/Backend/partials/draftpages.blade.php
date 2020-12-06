@@ -62,8 +62,8 @@
                 @endforeach
             @else
                 <tr>
-                    <th class="text-muted"><a href="{{ route('Backend.Pages.create') }}"
-                            id="nodraftpages">There is no
+                    <th ><a href="{{ route('Backend.Pages.create') }}"
+                            id="nodraftpages" class="text-muted">There is no
                             item here yer.</a></th>
                 </tr>
             @endif

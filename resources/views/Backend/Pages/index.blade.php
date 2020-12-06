@@ -42,9 +42,11 @@
                                     id="trashcount">Trashed
                                     ({{ $trashed }})</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="{{ route('Backend.Pages.create') }}" class="btn btn-success">Create
-                                    NewPage</button>
+                            <li class="nav-item" >
+                                <form action="{{ route('Backend.Pages.create') }}">
+                                    <button class="btn btn-success" style="height: 35px; line-height: 33px; padding: 0 25px; background: #1d9f3c; border-radius: 2px; margin-left:25px;">Add new</button>
+                                </form>
+
                             </li>
                         </ul>
 
