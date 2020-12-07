@@ -77,6 +77,18 @@ Route::get('/admin/pages/published/count', 'PagesController@getNewPublishedCount
     //Create
     //Edit
     //Delete
+
+
+/**
+ * This will be the Upload Media Module   Section routes
+ *
+ */
+//Route::get('/admin/modules/media/mediaupload', 'MediaUploadController@uploadForm')->name('Backend.Modules.uploadmedia');
+Route::get('/admin/modules/media/mediaupload', 'MediaUploadController@Show')->name('Backend.Modules.uploadmedia');
+
+
+Route::post('/admin/modules/media/mediaupload/imageupload', 'MediaUploadController@UploadMedia')->name('Backend.Modules.imageupload');
+
 /************************************************************************************** */
 /**
  * FRONTEND

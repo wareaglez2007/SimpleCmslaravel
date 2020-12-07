@@ -124,7 +124,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{route('Backend.Modules.uploadmedia')}}">
 
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-images"
                                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
