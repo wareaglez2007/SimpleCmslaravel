@@ -36,7 +36,7 @@ $(function () {
                     console.log(lastimage.id);
                     $('#noimageyet').text('');
                     //var ajaximage = "<div class='col-md-2' id='image" + lastimage.id + "'> <a href='#' class=''><img src='http://127.0.0.1:8000/" + lastimage.path_to + lastimage.image_name + "' class='img-thumbnail img-responsive' /></a></div>";
-                   var ajaximage ="<div class='col-lg-3'><div class='card custom-card' id='image"+lastimage.id+"'><a href='#' class=''><img src='http://127.0.0.1:8000/" + lastimage.path_to + lastimage.image_name + "' class='card-img-top' /></a><div class='card-body'><p class='text-muted'>" + lastimage.image_name + "</p><a href='javascript:void(0)' onclick='DeleteImage("+lastimage.id+")' id='delimage'>Delete</a></div></div></div>";
+                   var ajaximage ="<div class='col-lg-3' id='image"+lastimage.id+"'><div class='card custom-card' ><a href='#' class=''><img src='http://127.0.0.1:8000/" + lastimage.path_to + lastimage.image_name + "' class='card-img-top' /></a><div class='card-body'><p class='text-muted'>" + lastimage.image_name + "</p><a href='javascript:void(0)' onclick='DeleteImage("+lastimage.id+")' id='delimage'>Delete</a></div></div></div>";
                     //images_row
                     $('#images_row').last().append(ajaximage);
 

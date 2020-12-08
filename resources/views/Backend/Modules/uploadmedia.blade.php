@@ -67,8 +67,8 @@
                                     <div class="row" id="images_row">
                                         @if (count($images) != 0)
                                             @foreach ($images as $image)
-                                                <div class="col-lg-3">
-                                                    <div class="card custom-card" id="image{{ $image->id }}">
+                                                <div class="col-lg-3" id="image{{ $image->id }}">
+                                                    <div class="card custom-card" >
                                                         <a href="#" class="">
                                                             <img src="{{ asset($image->path_to . $image->image_name) }}"
                                                                 class="card-img-top" />
