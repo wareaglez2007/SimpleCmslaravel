@@ -83,12 +83,15 @@ Route::get('/admin/pages/published/count', 'PagesController@getNewPublishedCount
  * This will be the Upload Media Module   Section routes
  *
  */
-//Route::get('/admin/modules/media/mediaupload', 'MediaUploadController@uploadForm')->name('Backend.Modules.uploadmedia');
+
 Route::get('/admin/modules/media/mediaupload', 'MediaUploadController@Show')->name('Backend.Modules.uploadmedia');
+Route::get('/admin/modules/media/mediaupload/lastupload', 'MediaUploadController@LastImageUploaded')->name('Backend.Modules.lastupload');
 
-
+//getImageInfoByID
+Route::get('/admin/modules/media/mediaupload/getinfobyid/{id}', 'MediaUploadController@getImageInfoByID')->name('Backend.Modules.imageinfo');
 Route::post('/admin/modules/media/mediaupload/imageupload', 'MediaUploadController@UploadMedia')->name('Backend.Modules.imageupload');
-
+//DeleteImages
+Route::post('/admin/modules/media/mediaupload/destroy', 'MediaUploadController@DeleteImages')->name('Backend.Modules.destroyimage');
 /************************************************************************************** */
 /**
  * FRONTEND
