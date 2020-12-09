@@ -92,6 +92,8 @@ Route::get('/admin/modules/media/mediaupload/getinfobyid/{id}', 'MediaUploadCont
 Route::post('/admin/modules/media/mediaupload/imageupload', 'MediaUploadController@UploadMedia')->name('Backend.Modules.imageupload');
 //DeleteImages
 Route::post('/admin/modules/media/mediaupload/destroy', 'MediaUploadController@DeleteImages')->name('Backend.Modules.destroyimage');
+//UpdateImageInformation
+Route::post('/admin/modules/media/mediaupload/updateimageinfo', 'MediaUploadController@UpdateImageInformation')->name('Backend.Modules.updateimage');
 /************************************************************************************** */
 /**
  * FRONTEND

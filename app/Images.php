@@ -14,6 +14,8 @@ class Images extends Model
           'image_hash',
           'pages_id',
            'path_to',
+           'alttext',
+           'caption',
 
           ];
         protected $guarded = [];

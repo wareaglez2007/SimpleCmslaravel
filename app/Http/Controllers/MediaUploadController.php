@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\pages;
 use App\Images;
+use APP\PageImages;
 use Faker\Provider\Image;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Session;
@@ -50,9 +51,10 @@ class MediaUploadController extends Controller
                 'path_to' => 'storage/uploads/' . $image_hashName . '/',
             ]);
 
-
+           $lastimage = $images->get()->last();
+              //  dd($last);
             $success_message = "Image " . $image_original_name . " has been uploaded";
-            return response()->json(['success' => $success_message, 'session' => session(), 'errors']);
+            return response()->json(['success' => $success_message,  'lastadded' => $lastimage]);
         } else {
             return response()->json();
         }
@@ -86,7 +88,30 @@ class MediaUploadController extends Controller
 
         //GET it from AJAX
         $images->where('id', $request->id)->forceDelete();
-        return response()->json();
+        $success_message = "Image $request->image_name has been deleted!!!";
+        return response()->json(['success' => $success_message]);
 
     }
+    //Update Image Information
+    public function UpdateImageInformation(Images $images, Request $request){
+        //Check if given information is not empty
+        $images->where('id', $request->id)->update([
+            'alttext' => $request->alttext,
+            'caption' => $request->caption
+        ]);
+        $success_message = "Image has been updated";
+        return response()->json(['success' => $success_message]);
+    }
+
+    /**
+     * Utilize the PageImages Model to create relationship between Pages and Images
+     * pages_id links with image_id
+     * page 1 has the following images => 2,3,4 or image 2 is used in two pages image 2 pages 1,3
+     * table reference id pages_id image_id
+     *                  1   1       2
+     *                  2   1       3
+     *                  3   1       4
+     *                  4   3       2
+     */
+
 }
